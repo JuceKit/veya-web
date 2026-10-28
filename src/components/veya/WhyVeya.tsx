@@ -25,7 +25,7 @@ export function WhyVeya() {
         <div className="mt-16 grid gap-4 lg:grid-cols-[1fr_1.2fr]">
           <FadeUp className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
             <Stat value="+48%" label="better while practising with ChatGPT" tone="bg-lavender" />
-            <Stat value="−17%" label="worse than non-users once it was taken away" tone="bg-sage-tint" />
+            <Stat value="−17%" label="worse than non-users once it was taken away" tone="bg-panel border border-border" />
             <p className="px-2 text-sm text-muted-foreground sm:col-span-2 lg:col-span-1">Bastani et al., PNAS 2025</p>
           </FadeUp>
           <FadeUp delay={120}>

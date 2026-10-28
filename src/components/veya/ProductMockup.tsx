@@ -21,7 +21,7 @@ const mastery = [
 export function ProductMockup() {
   return (
     <section className="px-3 pt-3 sm:px-5 sm:pt-5" aria-label="Product preview">
-      <div className="grid-lines mx-auto max-w-[90rem] overflow-hidden rounded-[var(--radius-panel)] bg-navy px-4 py-12 sm:px-10 sm:py-20">
+      <div className="grid-lines mx-auto max-w-7xl overflow-hidden rounded-[var(--radius-panel)] bg-navy px-4 py-12 sm:px-10 sm:py-20">
         <FadeUp className="relative mx-auto max-w-5xl">
           <div className="overflow-hidden rounded-[var(--radius-card)] border border-on-navy/10 bg-panel" role="img" aria-label="The Veya app: a live voice session on p-values in Statistics 201">
             <div className="flex items-center justify-between border-b border-border px-5 py-3" aria-hidden>

@@ -10,7 +10,7 @@ const stats = [
 export function WhyVoice() {
   return (
     <section id="voice" className="scroll-mt-24 px-3 sm:px-5">
-      <div className="grid-lines mx-auto max-w-[90rem] rounded-[var(--radius-panel)] bg-navy px-5 py-16 sm:px-10 sm:py-24">
+      <div className="grid-lines mx-auto max-w-7xl rounded-[var(--radius-panel)] bg-navy px-5 py-16 sm:px-10 sm:py-24">
         <div className="mx-auto max-w-5xl">
           <FadeUp className="grid gap-10 md:grid-cols-[1.3fr_1fr] md:items-end">
             <div>

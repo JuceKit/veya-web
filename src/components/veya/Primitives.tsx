@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 export function useInView<T extends Element>(threshold = 0.15) {
   const ref = useRef<T>(null);
@@ -24,23 +24,9 @@ export function FadeUp({ children, className = "", delay = 0 }: { children: Reac
   );
 }
 
-/** Veya leaf-V mark, traced from the brand board. */
+/** Veya leaf-V mark, vector-traced from the original brand board (public/veya-logo.svg). */
 export function Logo({ className = "h-7 w-auto" }: { className?: string }) {
-  const id = useId().replace(/:/g, "");
-  return (
-    <svg viewBox="4 3 46 33" className={className} aria-hidden>
-      <defs>
-        <linearGradient id={`${id}a`} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#A29CF5" /><stop offset="1" stopColor="#4F46E5" />
-        </linearGradient>
-        <linearGradient id={`${id}b`} x1="0" y1="1" x2="1" y2="0">
-          <stop offset="0" stopColor="#10B981" /><stop offset=".55" stopColor="#7EE0B5" /><stop offset="1" stopColor="#C4EBB0" />
-        </linearGradient>
-      </defs>
-      <path fill={`url(#${id}a)`} d="M6.5 11.2C5.3 9.4 7 8.6 9.6 9.3C15.8 11 21.4 16 25.4 22.6L22.6 32.4C16.6 27.6 10.4 18.4 6.5 11.2Z" />
-      <path fill={`url(#${id}b)`} d="M19.6 30.4C26.4 18.8 36.4 9.4 45 6.2C47.6 5.2 48.6 6.6 47.6 9C43.4 20 35 30 27.4 33.2C23.2 35 19.4 33.6 19.6 30.4Z" />
-    </svg>
-  );
+  return <img src="/veya-logo.svg" alt="" aria-hidden width={1020} height={705} className={className} draggable={false} />;
 }
 
 export function Eyebrow({ children, tone = "light" }: { children: ReactNode; tone?: "light" | "dark" }) {

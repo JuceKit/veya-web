@@ -28,7 +28,7 @@ export function TypedDemo() {
 
   return (
     <section className="px-3 sm:px-5">
-      <div ref={ref} className="mx-auto max-w-[90rem] rounded-[var(--radius-panel)] bg-lavender px-5 py-16 sm:px-10 sm:py-24">
+      <div ref={ref} className="mx-auto max-w-7xl rounded-[var(--radius-panel)] bg-lavender px-5 py-16 sm:px-10 sm:py-24">
         <div className="mx-auto max-w-5xl">
           <Eyebrow>Start with one sentence</Eyebrow>
           <p className="min-h-[7.5rem] font-display text-3xl font-semibold leading-[1.1] tracking-tight text-foreground sm:min-h-[9rem] sm:text-5xl" aria-label={LINE}>
