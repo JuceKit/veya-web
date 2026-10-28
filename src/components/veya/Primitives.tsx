@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 
 export function useInView<T extends Element>(threshold = 0.15) {
   const ref = useRef<T>(null);
@@ -24,38 +24,42 @@ export function FadeUp({ children, className = "", delay = 0 }: { children: Reac
   );
 }
 
-export function Logo({ className = "size-8" }: { className?: string }) {
+/** Veya leaf-V mark, traced from the brand board. */
+export function Logo({ className = "h-7 w-auto" }: { className?: string }) {
+  const id = useId().replace(/:/g, "");
   return (
-    <svg viewBox="0 0 40 40" className={className} aria-hidden>
+    <svg viewBox="4 3 46 33" className={className} aria-hidden>
       <defs>
-        <linearGradient id="veya-g" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="var(--indigo)" />
-          <stop offset="1" stopColor="var(--sage)" />
+        <linearGradient id={`${id}a`} x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#A29CF5" /><stop offset="1" stopColor="#4F46E5" />
+        </linearGradient>
+        <linearGradient id={`${id}b`} x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0" stopColor="#10B981" /><stop offset=".55" stopColor="#7EE0B5" /><stop offset="1" stopColor="#C4EBB0" />
         </linearGradient>
       </defs>
-      <path d="M4 8c6 0 9 4 12 12l4 11 4-11C27 11 31 6 37 5c-5 3-8 8-11 17l-3 9c-1 3-5 3-6 0l-3-9C11 13 9 10 4 8z" fill="url(#veya-g)" />
+      <path fill={`url(#${id}a)`} d="M6.5 11.2C5.3 9.4 7 8.6 9.6 9.3C15.8 11 21.4 16 25.4 22.6L22.6 32.4C16.6 27.6 10.4 18.4 6.5 11.2Z" />
+      <path fill={`url(#${id}b)`} d="M19.6 30.4C26.4 18.8 36.4 9.4 45 6.2C47.6 5.2 48.6 6.6 47.6 9C43.4 20 35 30 27.4 33.2C23.2 35 19.4 33.6 19.6 30.4Z" />
     </svg>
   );
 }
 
-export function SectionHeading({ eyebrow, title, sub }: { eyebrow?: string; title: ReactNode; sub?: ReactNode }) {
+export function Eyebrow({ children, tone = "light" }: { children: ReactNode; tone?: "light" | "dark" }) {
   return (
-    <div className="max-w-2xl">
-      {eyebrow && <p className="mb-4 text-sm font-medium text-indigo">{eyebrow}</p>}
-      <h2 className="text-4xl text-foreground sm:text-5xl">{title}</h2>
-      {sub && <p className="mt-5 text-muted-foreground">{sub}</p>}
-    </div>
+    <p className={`mb-5 inline-flex items-center gap-2 text-sm font-medium ${tone === "dark" ? "text-sage-tint" : "text-indigo"}`}>
+      <span className={`h-px w-6 ${tone === "dark" ? "bg-sage-tint" : "bg-indigo"}`} aria-hidden />
+      {children}
+    </p>
   );
 }
 
 export function Waveform({ bars = 28, className = "" }: { bars?: number; className?: string }) {
   return (
-    <div className={`flex h-8 items-center gap-[3px] ${className}`} aria-hidden>
+    <div className={`flex h-10 items-center gap-[3px] ${className}`} aria-hidden>
       {Array.from({ length: bars }).map((_, i) => (
         <span
           key={i}
-          className="animate-wave w-[3px] rounded-full bg-gradient-brand"
-          style={{ height: `${30 + ((i * 37) % 70)}%`, animationDelay: `${(i % 7) * 0.12}s` }}
+          className="animate-wave w-[3px] shrink-0 rounded-full bg-gradient-brand"
+          style={{ height: `${25 + ((i * 37) % 75)}%`, animationDelay: `${(i % 9) * 0.1}s` }}
         />
       ))}
     </div>

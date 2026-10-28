@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/veya/Nav";
 import { Hero } from "@/components/veya/Hero";
+import { ProductMockup } from "@/components/veya/ProductMockup";
 import { WhyVeya } from "@/components/veya/WhyVeya";
 import { TypedDemo } from "@/components/veya/TypedDemo";
 import { HowItWorks } from "@/components/veya/HowItWorks";
@@ -34,6 +35,7 @@ function Index() {
       <Nav />
       <main>
         <Hero />
+        <ProductMockup />
         <WhyVeya />
         <TypedDemo />
         <HowItWorks />
