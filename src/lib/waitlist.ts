@@ -15,7 +15,7 @@ export type JoinResult = { ok: true } | { ok: false; error: string; duplicate?: 
 
 export async function joinWaitlist(raw: string, source: WaitlistSource): Promise<JoinResult> {
   const parsed = emailSchema.safeParse(raw);
-  if (!parsed.success) return { ok: false, error: parsed.error.issues[0].message };
+  if (!parsed.success) return { ok: false, error: parsed.error.issues[0]?.message ?? "Invalid email." };
   const { error } = await supabase.from("waitlist").insert({ email: parsed.data, source });
   if (error) {
     if (error.code === "23505") {

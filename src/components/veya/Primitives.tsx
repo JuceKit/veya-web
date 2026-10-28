@@ -7,7 +7,7 @@ export function useInView<T extends Element>(threshold = 0.15) {
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) { setVisible(true); io.disconnect(); }
+      if (e?.isIntersecting) { setVisible(true); io.disconnect(); }
     }, { threshold });
     io.observe(el);
     return () => io.disconnect();
