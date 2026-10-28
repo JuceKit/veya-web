@@ -22,7 +22,7 @@ export function Hero() {
               You can ask AI anything. Can you remember what it said? Veya talks you through what you want to learn, asks you back, and remembers where you left off.
             </p>
           </FadeUp>
-          <FadeUp delay={240} id-anchor="join">
+          <FadeUp delay={240}>
             <div id="join" className="scroll-mt-32">
               <WaitlistForm source="hero" />
               <p className="mt-3 px-2 text-sm text-muted-foreground">1,900 people are already waiting. No spam, ever.</p>

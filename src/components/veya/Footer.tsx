@@ -11,7 +11,7 @@ export function Footer() {
     <footer className="px-5 py-10">
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 sm:flex-row">
         <div className="flex items-center gap-3">
-          <Logo className="size-7" />
+          <Logo className="h-6 w-auto" />
           <p className="text-sm text-muted-foreground">© 2026 Veya. Learning that stays.</p>
         </div>
         <ul className="flex gap-1">
