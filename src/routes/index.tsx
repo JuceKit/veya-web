@@ -1,24 +1,47 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/veya/Nav";
+import { Hero } from "@/components/veya/Hero";
+import { WhyVeya } from "@/components/veya/WhyVeya";
+import { TypedDemo } from "@/components/veya/TypedDemo";
+import { HowItWorks } from "@/components/veya/HowItWorks";
+import { WhyVoice } from "@/components/veya/WhyVoice";
+import { Faq } from "@/components/veya/Faq";
+import { Closing } from "@/components/veya/Closing";
+import { Footer } from "@/components/veya/Footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Veya: Learning that stays";
+const description = "Veya is a personal learning space that talks with you, asks you back, and remembers where you left off. Join the waitlist.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Nav />
+      <main>
+        <Hero />
+        <WhyVeya />
+        <TypedDemo />
+        <HowItWorks />
+        <WhyVoice />
+        <Faq />
+        <Closing />
+      </main>
+      <Footer />
+    </>
   );
 }
