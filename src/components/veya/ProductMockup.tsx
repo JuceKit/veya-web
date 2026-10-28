@@ -29,7 +29,7 @@ export function ProductMockup() {
               <span className="text-xs text-muted-foreground">Statistics 201 · Session 6</span>
               <span className="w-10" />
             </div>
-            <div className="grid md:grid-cols-[230px_1fr]">
+            <div className="grid grid-cols-1 md:grid-cols-[230px_1fr]">
               <aside className="hidden border-r border-border bg-background/50 p-5 md:block">
                 <div className="mb-6 flex items-center gap-2"><Logo className="h-5 w-auto" /><span className="font-display font-semibold">Veya</span></div>
                 <Label>Your spaces</Label>
@@ -50,7 +50,7 @@ export function ProductMockup() {
                   ))}
                 </ul>
               </aside>
-              <div className="p-5 sm:p-8">
+              <div className="min-w-0 p-5 sm:p-8">
                 <p className="font-display text-2xl font-semibold text-foreground sm:text-3xl">Good evening, Ada.</p>
                 <p className="mt-2 max-w-md text-[15px] text-muted-foreground">Day 6 of Statistics. Yesterday you stalled on p-values, so we're starting there.</p>
 
